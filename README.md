@@ -7,6 +7,7 @@ PassingNotes allows users to capture and pass information between NFC enabled de
 
 
 Notes:
+
 chose wtf/clowns and a reverse domain because I own clowns.wtf and knew it would avoid conflict.
 
 Completed:
