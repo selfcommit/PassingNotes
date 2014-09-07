@@ -10,11 +10,11 @@ Notes:
 chose wtf/clowns and a reverse domain because I own clowns.wtf and knew it would avoid conflict.
 
 Completed:
-Boots Hello World Activity
-Requests permissions for NFC
+*Boots Hello World Activity
+*Requests permissions for NFC
 
 Todo:
-Add NFC intent based on nearby phone
-Add NFC intent based on sticker / Note
-include SQL light DB for stored captured 'Notes'
-...More?
+*Add NFC intent based on nearby phone
+*Add NFC intent based on sticker / Note
+*include SQL light DB for stored captured 'Notes'
+*...More?
