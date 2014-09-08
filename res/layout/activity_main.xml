@@ -23,4 +23,27 @@
         android:textStyle="bold"
         android:text="@string/Begin" />
 
+    <ImageButton
+        android:id="@+id/imageButton1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignRight="@+id/textView1"
+        android:layout_marginRight="50dp"
+        android:layout_marginTop="66dp"
+        android:contentDescription="@string/hello_world"
+        android:onClick="someMethod"
+        android:src="@drawable/notes" />
+
+    <ImageView
+        android:id="@+id/imageView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/textView1"
+        android:layout_alignTop="@+id/imageButton1"
+        android:layout_marginLeft="37dp"
+        android:contentDescription="@string/hello_world"
+        android:onClick="someMethod"
+        android:src="@drawable/notes" />
+
 </RelativeLayout>
