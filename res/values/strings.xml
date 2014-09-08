@@ -4,5 +4,6 @@
     <string name="app_name">Passing Notes</string>
     <string name="hello_world">Hello world!</string>
     <string name="welcome_1">NFC Reader Application.  Press the button to begin.</string>
+    <string name="Begin">Begin</string>
 
 </resources>

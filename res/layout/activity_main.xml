@@ -5,8 +5,22 @@
     tools:context="${relativePackage}.${activityClass}" >
 
     <TextView
+        android:id="@+id/textView1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/hello_world" />
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:textStyle="italic"
+        android:text="@string/welcome_1" />
+
+    <Button
+        android:id="@+id/button1"
+        android:onClick="someMethod"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/textView1"
+        android:layout_centerHorizontal="true"
+        android:textStyle="bold"
+        android:text="@string/Begin" />
 
 </RelativeLayout>
