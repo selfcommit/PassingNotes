@@ -10,5 +10,7 @@
     <string name="Write_a_Note">Write a Note</string>
     <string name="Store_note">Store Note</string>
     <string name="title_activity_note_storage">NoteStorage</string>
+    <string name="help">Help</string>
+    <string name="about">About</string>
 
 </resources>

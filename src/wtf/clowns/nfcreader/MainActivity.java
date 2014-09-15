@@ -15,7 +15,30 @@ public class MainActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
     }
+    
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+    	getMenuInflater().inflate(R.menu.options, menu);
+    	
+    	return(super.onCreateOptionsMenu(menu));
+    }
    
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+    	switch (item.getItemId()) {
+    	case android.R.id.home:
+    		return(true);
+    		
+    	case R.id.about:
+    		return(true);
+    		
+    	case R.id.help:
+    		return(true);    		
+    	}
+    	
+    	return(super.onOptionsItemSelected(item));
+    	
+    }
     @Override
     public void onBackPressed()
     {
