@@ -5,6 +5,7 @@ NFC Reader App for NJIT
 
 PassingNotes allows users to capture and pass information between NFC enabled devices and NFC tags/stickers. 
 
+![Alt text](http://i.imgur.com/aaOHceD.png "Passing Notes")
 
 Notes:
 
