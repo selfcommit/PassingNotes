@@ -6,5 +6,9 @@
     <string name="welcome_1">NFC Reader Application.  Press the button to begin.</string>
     <string name="Begin">Begin</string>
     <string name="action_settings">Settings</string>
+    <string name="title_activity_write_note">WriteNote</string>
+    <string name="Write_a_Note">Write a Note</string>
+    <string name="Store_note">Store Note</string>
+    <string name="title_activity_note_storage">NoteStorage</string>
 
 </resources>

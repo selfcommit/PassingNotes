@@ -4,6 +4,8 @@ import android.app.Activity;
 import android.os.Bundle;
 import android.view.*;
 import android.content.Intent;
+import android.widget.EditText;
+import android.widget.TextView;
 
 
 public class MainActivity extends Activity {
@@ -22,9 +24,21 @@ public class MainActivity extends Activity {
     	finish();
     }
     
-    public void someMethod(View button1) {
+    public void writeNote(View button1) {
     	//do something
-    	setContentView(R.layout.activity_next);
+    	setContentView(R.layout.activity_write_notes);
+    	
+    }
+    
+    public void storeNote(View writtenNote) {
+    	//Call note storage
+    	EditText et = (EditText) findViewById(R.id.writtenNote);
+    	String noteText = et.getText().toString();
+    	setContentView(R.layout.activity_note_storage);
+    	final TextView notedisplay = (TextView) findViewById(R.id.note_content);
+    	notedisplay.setText(noteText);
     	
     }
 }
+
+

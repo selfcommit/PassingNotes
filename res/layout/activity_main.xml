@@ -13,47 +13,27 @@
         android:textStyle="italic"
         android:text="@string/welcome_1" />
 
-    <Button
-        android:id="@+id/button1"
-        android:onClick="someMethod"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_above="@+id/textView1"
-        android:layout_centerHorizontal="true"
-        android:textStyle="bold"
-        android:text="@string/Begin" />
-
     <ImageView
         android:id="@+id/imageView1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignLeft="@+id/textView1"
-        android:layout_alignTop="@+id/imageButton1"
-        android:layout_marginLeft="37dp"
-        android:contentDescription="@string/hello_world"
-        android:onClick="someMethod"
-        android:src="@drawable/notes" />
-
-    <ImageButton
-        android:id="@+id/imageButton1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
-        android:layout_marginLeft="16dp"
-        android:layout_marginTop="46dp"
-        android:layout_toRightOf="@+id/button1"
-        android:contentDescription="@string/hello_world"
-        android:onClick="someMethod"
+        android:layout_marginLeft="40dp"
+        android:layout_marginTop="80dp"
+        android:clickable="true"
+        android:contentDescription="@string/Write_a_Note"
+        android:onClick="writeNote"
         android:src="@drawable/notes" />
 
-    <ImageView
-        android:id="@+id/imageView2"
-        android:contentDescription="@string/hello_world"
+    <TextView
+        android:id="@+id/textView2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/textView1"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="65dp"
-        android:src="@drawable/derp_brian" />
+        android:layout_alignBottom="@+id/imageView1"
+        android:layout_alignLeft="@+id/textView1"
+        android:layout_marginBottom="54dp"
+        android:layout_marginLeft="24dp"
+        android:text="@string/Write_a_Note" />
 
 </RelativeLayout>

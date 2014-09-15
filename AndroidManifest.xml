@@ -28,6 +28,10 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name=".NoteStorage"
+            android:label="@string/title_activity_note_storage" >
+        </activity>
     </application>
 
 </manifest>
