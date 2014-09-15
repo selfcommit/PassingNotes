@@ -28,6 +28,9 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name="WriteNotesActivity"></activity>
+        <activity android:name="ViewNotesActivity"></activity>
+        <activity android:name="SendNoteActivity"></activity>
     </application>
 
 </manifest>
