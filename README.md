@@ -15,6 +15,7 @@ Specific planned Features:
 
 
 Notes and Resources:
+---
 
 [Android NFC Information](http://developer.android.com/guide/topics/connectivity/nfc/index.html)
 
