@@ -11,11 +11,12 @@ Specific planned Features:
 * Send a Picture to another copy of PassingNotes (Over NFC) - Maybe insert in the notes?
 * Read Notes 
 
-![url](http://developer.android.com/guide/topics/connectivity/nfc/index.html "Android NFC Information")
-
 ![Alt text](http://i.imgur.com/aaOHceD.png "Passing Notes")
 
-Notes:
+
+Notes and Resources:
+
+[Android NFC Information](http://developer.android.com/guide/topics/connectivity/nfc/index.html)
 
 chose wtf/clowns and a reverse domain because I own clowns.wtf and knew it would avoid conflict.
 
