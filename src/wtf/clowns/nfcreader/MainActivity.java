@@ -43,18 +43,24 @@ public class MainActivity extends Activity {
     public void onPause() {
     	
     	Log.d(getClass().getSimpleName(),"onPause()");
+    	
+    	super.onPause();
     }
     
     @Override
     public void onStop() {
     	
     	Log.d(getClass().getSimpleName(), "onStop()");
+    	
+    	super.onStop();
     }
     
     @Override
     public void onDestroy() {
     	
     	Log.d(getClass().getSimpleName(), "onDestroy()");
+    	
+    	super.onDestroy();
     }
     
     @Override
