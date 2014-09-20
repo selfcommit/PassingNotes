@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.os.Bundle;
 import android.view.*;
 import android.content.Intent;
+import android.util.Log;
 
 
 public class MainActivity extends Activity {
@@ -11,7 +12,49 @@ public class MainActivity extends Activity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        //setContentView(R.layout.activity_main);
+        
+        Log.d(getClass().getSimpleName(), "onCreate()");
+    }
+    
+    @Override
+    public void onRestart() {
+    	super.onRestart();
+    	
+    	Log.d(getClass().getSimpleName(), "onRestart()");
+    	
+    }
+    
+    @Override
+    public void onStart() {
+    	super.onStart();
+    	
+    	Log.d(getClass().getSimpleName(), "onStart()");
+    }
+    
+    @Override
+    public void onResume() {
+    	super.onResume();
+    	
+    	Log.d(getClass().getSimpleName(), "onResume()");
+    }
+    
+    @Override
+    public void onPause() {
+    	
+    	Log.d(getClass().getSimpleName(),"onPause()");
+    }
+    
+    @Override
+    public void onStop() {
+    	
+    	Log.d(getClass().getSimpleName(), "onStop()");
+    }
+    
+    @Override
+    public void onDestroy() {
+    	
+    	Log.d(getClass().getSimpleName(), "onDestroy()");
     }
     
     @Override
@@ -37,13 +80,14 @@ public class MainActivity extends Activity {
     	return(super.onOptionsItemSelected(item));
     	
     }
-    @Override
-    public void onBackPressed()
-    {
-    	super.onBackPressed();
-    	startActivity(new Intent(MainActivity.this, MainActivity.class));
-    	finish();
-    }
+    
+    //@Override
+    //public void onBackPressed()
+    //{
+    //	super.onBackPressed();
+    //	startActivity(new Intent(MainActivity.this, MainActivity.class));
+    //	finish();
+    //}
     
     public void writeNote(View v) {
     	//do something
