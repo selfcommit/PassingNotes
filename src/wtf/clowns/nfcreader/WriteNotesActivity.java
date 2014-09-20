@@ -6,6 +6,7 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
 
+
 public class WriteNotesActivity extends Activity {
 	@Override
 	public void onCreate(Bundle savedInstanceState){
