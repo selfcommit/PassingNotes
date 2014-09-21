@@ -18,7 +18,8 @@
         android:allowBackup="true"
         android:icon="@drawable/ic_launcher"
         android:label="@string/app_name"
-        android:theme="@style/AppTheme" android:uiOptions="splitActionBarWhenNarrow">
+        android:theme="@style/AppTheme"
+        android:uiOptions="splitActionBarWhenNarrow" >
         <activity
             android:name=".MainActivity"
             android:label="@string/app_name" >
@@ -28,10 +29,18 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name="WriteNotesActivity"></activity>
-        <activity android:name="ViewNotesActivity"></activity>
-        <activity android:name="SendNoteActivity"></activity>
-        <activity android:name="HelpMenuActivity"></activity>
+        <activity android:name=".WriteNotesActivity" >
+        </activity>
+        <activity android:name=".ViewNotesActivity" >
+        </activity>
+        <activity android:name=".SendNoteActivity" >
+        </activity>
+        <activity android:name=".HelpMenuActivity" >
+        </activity>
+        <activity
+            android:name=".SimpleContentActivity"
+            android:label="@string/title_activity_simple_content" >
+        </activity>
     </application>
 
 </manifest>

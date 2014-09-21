@@ -5,17 +5,13 @@ import android.database.sqlite.SQLiteOpenHelper;
 import 	android.content.Context;
 
 public class notesDBHelper extends SQLiteOpenHelper {
-
-	private static final int DATABASE_VERSION =1;
-	private static final String DATABASE_NAME = "notesdb";
-	private static final String DICTIONARY_TABLE_NAME = "notes";
-	private static final String KEY_WORD = "title";
-	private static final String KEY_DEFINITION = "body";
-	private static final String DICTIONARY_TABLE_CREATE = 
-			"CREATE TABLE " + DICTIONARY_TABLE_NAME + " (" +
-					KEY_WORD + "TEXT, " + 
-					KEY_DEFINITION + " TEXT);";
 	
+	private static final String DATABASE_NAME = "notes.db";
+	private static final int DATABASE_VERSION = 1;
+	static final String TITLE = "title";
+	static final String NOTE_TEXT = "notetext";
+	static final String TABLE = "notes";
+		
 	notesDBHelper(Context context) {
 		super(context, DATABASE_NAME, null, DATABASE_VERSION);
 		
@@ -23,7 +19,7 @@ public class notesDBHelper extends SQLiteOpenHelper {
 	
 	@Override
 	public void onCreate(SQLiteDatabase db) {
-		db.execSQL(DICTIONARY_TABLE_CREATE);
+		db.execSQL("CREATE TABLE notes (_id INTEGER PRIMARY KEY AUTOINCREMENT, title TEXT, notetext TEXT);");
 	}
 	
 	@Override

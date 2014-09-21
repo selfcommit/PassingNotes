@@ -40,26 +40,40 @@
         android:name="wtf.clowns.nfcreader.write_a_note"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_above="@+id/textView3"
         android:layout_alignLeft="@+id/textView2"
         android:layout_alignRight="@+id/textView2"
-        android:layout_below="@+id/textView2" />
+        android:layout_below="@+id/textView2"
+        tools:layout="@layout/frag_write_a_note" />
 
     <fragment
         android:id="@+id/fragment2"
         android:name="wtf.clowns.nfcreader.view_notes"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/fragment1"
         android:layout_alignLeft="@+id/SendNotes"
         android:layout_alignRight="@+id/SendNotes"
-        android:layout_below="@+id/SendNotes" />
+        android:layout_below="@+id/SendNotes"
+        tools:layout="@layout/frag_view_notes" />
 
     <fragment
         android:id="@+id/fragment3"
         android:name="wtf.clowns.nfcreader.send_a_note"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/fragment2"
         android:layout_alignLeft="@+id/textView1"
         android:layout_alignRight="@+id/textView1"
-        android:layout_below="@+id/textView2" />
+        android:layout_below="@+id/textView2"
+        tools:layout="@layout/frag_send_a_note" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:text="@string/welcome_1" />
 
 </RelativeLayout>

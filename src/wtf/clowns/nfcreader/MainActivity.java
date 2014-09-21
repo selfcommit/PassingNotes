@@ -103,19 +103,6 @@ public class MainActivity extends Activity {
     //	finish();
     //}
     
-    public void writeNote(View v) {
-    	//do something
-    	startActivity(new Intent(this, WriteNotesActivity.class));
-    	
-    }
-    
-    public void viewNotes(View v) {
-    	startActivity(new Intent(this, ViewNotesActivity.class));
-    }
-    
-    public void sendNote(View v) {
-    	startActivity(new Intent(this, SendNoteActivity.class));
-    }
     
 }
 
