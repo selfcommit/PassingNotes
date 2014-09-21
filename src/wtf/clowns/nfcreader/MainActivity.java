@@ -12,7 +12,7 @@ public class MainActivity extends Activity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        //setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_main);
         
         Log.d(getClass().getSimpleName(), "onCreate()");
     }
@@ -72,14 +72,22 @@ public class MainActivity extends Activity {
    
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
+    	Intent i = new Intent();
+    	
     	switch (item.getItemId()) {
     	case android.R.id.home:
     		return(true);
     		
     	case R.id.about:
+    		i = new Intent(this, HelpMenuActivity.class);
+    		startActivity(i);
+    		
     		return(true);
     		
     	case R.id.help:
+    		i = new Intent(this, HelpMenuActivity.class);
+    		startActivity(i);
+    		
     		return(true);    		
     	}
     	
