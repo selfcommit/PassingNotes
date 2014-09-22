@@ -22,4 +22,5 @@ Todo:
 * Fill out 'Send a Note' Activity
 * Store notes in local SQLite DB
 * Fill out 'View Notes' Activity (Call all notes in SQLite DB)
+* Add ability to browse for images stored on phone to share (Once the above is complete)
 * ...More?
