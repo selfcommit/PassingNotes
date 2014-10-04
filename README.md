@@ -37,4 +37,4 @@ Todo:
 * ...More?
 
 NiceToHave:
-* Please Add Here
+* Include Editor for stylized Notes
