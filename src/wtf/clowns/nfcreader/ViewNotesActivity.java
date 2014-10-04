@@ -4,10 +4,13 @@ import android.app.Activity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.TextView;
+import android.widget.Toast;
+import android.widget.AdapterView.OnItemClickListener;
 
 
 public class ViewNotesActivity extends Activity{
@@ -19,6 +22,8 @@ public class ViewNotesActivity extends Activity{
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_view_notes);
 		
+		db = new notesDBHelper(this);
+		
 		//Grab object form layout XML
 		notesList = (ListView) findViewById(R.id.Noteslist);
 		String[] testlist = new String[] {"First Note", "Second Note", "Third Note"};
@@ -27,12 +32,30 @@ public class ViewNotesActivity extends Activity{
 		
 		notesList.setAdapter(adapter);
 		
-		db = new notesDBHelper(this);
 		//String query = String.format("INSERT INTO notes (title, notetext) VALUES ('%s', '%s')", noteText, noteText);
     	
 		//db.getWritableDatabase().rawQuery(query, null);
 		
+		//notesList Click Listener		
+		notesList.setOnItemClickListener(new OnItemClickListener() {
+			
+			@Override
+			public void onItemClick(AdapterView<?> parent, View view, int position, long id){
+				
+				int itemPosition = position;
+				
+				String itemValue = (String) notesList.getItemAtPosition(position);
+				
+				Toast.makeText(getApplicationContext(),
+				"Position :" + itemPosition +" Listitem :" + itemValue, Toast.LENGTH_LONG)
+				.show();
+				
+			}
+		});
+		
 	}
+	
+	
 	
     @Override
     public void onRestart() {
