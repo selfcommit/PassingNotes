@@ -12,6 +12,7 @@ Specific planned Features:
 * Read Notes 
 
 ![Alt text](http://i.imgur.com/aaOHceD.png "Passing Notes")
+![Alt text](Notes.png "All Notes")
 
 
 Notes and Resources:
