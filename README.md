@@ -27,12 +27,12 @@ Completed:
 * Requests permissions for NFC
 * include SQL light DB for stored captured 'Notes'
 * Store notes in local SQLite DB
+* Fill out 'View Notes' Activity (Call all notes in SQLite DB)
 
 Todo:
 * Add NFC intent based on nearby phone
 * Add NFC intent based on sticker / Note
 * Fill out 'Send a Note' Activity
-* Fill out 'View Notes' Activity (Call all notes in SQLite DB)
 * Add ability to browse for images stored on phone to share (Once the above is complete)
 * ...More?
 
