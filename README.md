@@ -38,3 +38,4 @@ Todo:
 
 NiceToHave:
 * Include Editor for stylized Notes
+* Pass Pictures inside Notes
