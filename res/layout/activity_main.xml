@@ -25,7 +25,7 @@
         android:text="@string/ViewNotes" />
 
     <TextView
-        android:id="@+id/textView1"
+        android:id="@+id/NoteTextHelper"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignBaseline="@+id/SendNotes"
@@ -63,8 +63,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignBottom="@+id/fragment2"
-        android:layout_alignLeft="@+id/textView1"
-        android:layout_alignRight="@+id/textView1"
+        android:layout_alignLeft="@+id/NoteTextHelper"
+        android:layout_alignRight="@+id/NoteTextHelper"
         android:layout_below="@+id/textView2"
         tools:layout="@layout/frag_send_a_note" />
 

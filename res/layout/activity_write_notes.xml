@@ -8,8 +8,8 @@
         android:id="@+id/writtenNote"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/store_note_button"
         android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
         android:layout_marginTop="170dp"
         android:ems="10"
         android:inputType="textMultiLine" >
@@ -25,5 +25,14 @@
         android:layout_centerVertical="true"
         android:onClick="storeNote"
         android:text="@string/Store_note" />
+
+    <TextView
+        android:id="@+id/NoteTextHelper"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/writtenNote"
+        android:layout_toLeftOf="@+id/writtenNote"
+        android:labelFor="@+id/writtenNote"
+        android:textAppearance="?android:attr/textAppearanceSmall" />
     
 </RelativeLayout>

@@ -10,7 +10,7 @@ import android.view.ViewGroup;
 
 
 public class write_a_note extends Fragment implements View.OnClickListener {
-	private notesDBHelper db = null;
+
 	
 	@Override
 	public void onActivityCreated(Bundle savedInstanceState) {
@@ -19,7 +19,6 @@ public class write_a_note extends Fragment implements View.OnClickListener {
 		setRetainInstance(true);
 		setHasOptionsMenu(true);
 		
-		db = new notesDBHelper(getActivity());
 		
 		Log.d(getClass().getSimpleName(), "OnActivityCreated");
 	}
@@ -77,8 +76,6 @@ public class write_a_note extends Fragment implements View.OnClickListener {
 	  public void onDestroy() {
 	    Log.d(getClass().getSimpleName(), "onDestroy()");
 	    super.onDestroy();
-	    
-	    db.close();
 	  }
 
 	  @Override

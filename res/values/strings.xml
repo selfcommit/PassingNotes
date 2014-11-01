@@ -15,5 +15,6 @@
     <string name="SendaNote">Send a Note</string>
     <string name="Reset">Reset</string>
     <string name="title_activity_simple_content">SimpleContentActivity</string>
+    <string name="NoteText"></string>
 
 </resources>

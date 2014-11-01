@@ -6,15 +6,13 @@ import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
-import android.widget.EditText;
 import android.widget.ListView;
-import android.widget.TextView;
 import android.widget.Toast;
 import android.widget.AdapterView.OnItemClickListener;
 
 
 public class ViewNotesActivity extends Activity{
-	private notesDBHelper db = null;
+	
 	ListView notesList;
 	
 	@Override
@@ -22,19 +20,17 @@ public class ViewNotesActivity extends Activity{
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_view_notes);
 		
-		db = new notesDBHelper(this);
+
 		
-		//Grab object form layout XML
+		//Grab object from layout XML
 		notesList = (ListView) findViewById(R.id.Noteslist);
+		
+		
 		String[] testlist = new String[] {"First Note", "Second Note", "Third Note"};
 		
 		ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, android.R.id.text1,testlist);
 		
 		notesList.setAdapter(adapter);
-		
-		//String query = String.format("INSERT INTO notes (title, notetext) VALUES ('%s', '%s')", noteText, noteText);
-    	
-		//db.getWritableDatabase().rawQuery(query, null);
 		
 		//notesList Click Listener		
 		notesList.setOnItemClickListener(new OnItemClickListener() {
@@ -54,6 +50,8 @@ public class ViewNotesActivity extends Activity{
 		});
 		
 	}
+	
+	
 	
 	
 	

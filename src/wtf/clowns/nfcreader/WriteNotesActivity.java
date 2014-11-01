@@ -9,7 +9,7 @@ import android.widget.TextView;
 
 
 public class WriteNotesActivity extends Activity {
-	private notesDBHelper db = null;
+
 	private EditText note_field;
 	
 	@Override
@@ -17,7 +17,7 @@ public class WriteNotesActivity extends Activity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_write_notes);
 		note_field = (EditText) findViewById(R.id.writtenNote);
-		db = new notesDBHelper(this);
+
 		
 	}
 
@@ -26,8 +26,6 @@ public class WriteNotesActivity extends Activity {
     	String noteText = note_field.getText().toString();
      	setContentView(R.layout.activity_view_note);
     	final TextView notedisplay = (TextView) findViewById(R.id.note_content);
-    	String query = String.format("INSERT INTO notes (title, notetext) VALUES ('%s', '%s')", noteText, noteText);
-    	db.getWritableDatabase().rawQuery(query, null);
     	notedisplay.setText(noteText);
     	
     }
