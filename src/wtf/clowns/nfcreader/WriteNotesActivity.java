@@ -1,6 +1,9 @@
 package wtf.clowns.nfcreader;
 
+import java.io.FileOutputStream;
+
 import android.app.Activity;
+import android.content.Context;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -24,6 +27,20 @@ public class WriteNotesActivity extends Activity {
     public void storeNote(View v) {
     	//Call note storage
     	String noteText = note_field.getText().toString();
+    	
+    	String filename = noteText;
+    	String content = noteText;
+    	FileOutputStream outputStream;
+    	//Store a Note
+    	//http://developer.android.com/training/basics/data-storage/files.html#WriteInternalStorage
+    	try{
+    		outputStream = openFileOutput (filename, Context.MODE_PRIVATE);
+    		outputStream.write(content.getBytes());
+    		outputStream.close();
+    	} catch (Exception e) {
+    		e.printStackTrace();
+    	}
+    	
      	setContentView(R.layout.activity_view_note);
     	final TextView notedisplay = (TextView) findViewById(R.id.note_content);
     	notedisplay.setText(noteText);

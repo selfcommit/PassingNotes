@@ -1,5 +1,7 @@
 package wtf.clowns.nfcreader;
 
+import java.io.File;
+
 import android.app.Activity;
 import android.os.Bundle;
 import android.util.Log;
@@ -7,8 +9,10 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
+import android.widget.TextView;
 import android.widget.Toast;
 import android.widget.AdapterView.OnItemClickListener;
+import android.content.Context;
 
 
 public class ViewNotesActivity extends Activity{
@@ -24,11 +28,14 @@ public class ViewNotesActivity extends Activity{
 		
 		//Grab object from layout XML
 		notesList = (ListView) findViewById(R.id.Noteslist);
+		File localStorage;
 		
+		localStorage = getFilesDir();
 		
-		String[] testlist = new String[] {"First Note", "Second Note", "Third Note"};
+		//String[] testlist = new String[] {"First Note", "Second Note", "Third Note"};
+		final String[] localfiles = localStorage.list(); 
 		
-		ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, android.R.id.text1,testlist);
+		ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, android.R.id.text1,localfiles);
 		
 		notesList.setAdapter(adapter);
 		
@@ -42,9 +49,16 @@ public class ViewNotesActivity extends Activity{
 				
 				String itemValue = (String) notesList.getItemAtPosition(position);
 				
-				Toast.makeText(getApplicationContext(),
-				"Position :" + itemPosition +" Listitem :" + itemValue, Toast.LENGTH_LONG)
-				.show();
+				setContentView(R.layout.activity_view_note);
+		    	final TextView notedisplay = (TextView) findViewById(R.id.note_content);
+		    	
+		    	String noteText = localfiles[itemPosition];
+		    	
+		    	notedisplay.setText(noteText);
+				
+		    	//Toast.makeText(getApplicationContext(),
+				//"Position :" + itemPosition +" Listitem :" + itemValue, Toast.LENGTH_LONG)
+				//.show();
 				
 			}
 		});
