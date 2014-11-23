@@ -1,6 +1,7 @@
 package wtf.clowns.nfcreader;
 
 import android.app.Fragment;
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -23,5 +24,7 @@ public class send_a_note extends Fragment implements View.OnClickListener {
 	public void onClick(View v) {
 		Log.d(getClass().getSimpleName(), "Send a Note Pressed");
 		// ((WriteNotesActivity)getActivity());
+		Intent i = new Intent(getActivity(), SendNoteActivity.class);
+		startActivity(i);
 	}
 }

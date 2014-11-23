@@ -1,5 +1,7 @@
 package wtf.clowns.nfcreader;
 
+import java.io.File;
+import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 
 import android.app.Activity;
@@ -27,14 +29,25 @@ public class WriteNotesActivity extends Activity {
     public void storeNote(View v) {
     	//Call note storage
     	String noteText = note_field.getText().toString();
-    	
+
     	String filename = noteText;
     	String content = noteText;
-    	FileOutputStream outputStream;
+    	File ExternalStorage = new File(getExternalFilesDir(null), filename);
+    	
+    	FileOutputStream outputStream = null;
+		try {
+			outputStream = new FileOutputStream(ExternalStorage);
+		} catch (FileNotFoundException e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
+		}
+    	
+
+    	
     	//Store a Note
     	//http://developer.android.com/training/basics/data-storage/files.html#WriteInternalStorage
     	try{
-    		outputStream = openFileOutput (filename, Context.MODE_PRIVATE);
+    		//outputStream = openFileOutput (filename, Context.MODE_PRIVATE);
     		outputStream.write(content.getBytes());
     		outputStream.close();
     	} catch (Exception e) {

@@ -30,7 +30,7 @@ public class ViewNotesActivity extends Activity{
 		notesList = (ListView) findViewById(R.id.Noteslist);
 		File localStorage;
 		
-		localStorage = getFilesDir();
+		localStorage = getExternalFilesDir(null);
 		
 		//String[] testlist = new String[] {"First Note", "Second Note", "Third Note"};
 		final String[] localfiles = localStorage.list(); 
