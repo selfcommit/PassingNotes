@@ -28,14 +28,14 @@ public class ViewNotesActivity extends Activity{
 		
 		//Grab object from layout XML
 		notesList = (ListView) findViewById(R.id.Noteslist);
-		File localStorage;
+		File ExternalStorage;
 		
-		localStorage = getExternalFilesDir(null);
+		ExternalStorage = getExternalFilesDir(null);
 		
 		//String[] testlist = new String[] {"First Note", "Second Note", "Third Note"};
-		final String[] localfiles = localStorage.list(); 
+		final String[] Externalfiles = ExternalStorage.list(); 
 		
-		ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, android.R.id.text1,localfiles);
+		ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, android.R.id.text1,Externalfiles);
 		
 		notesList.setAdapter(adapter);
 		
@@ -52,7 +52,7 @@ public class ViewNotesActivity extends Activity{
 				setContentView(R.layout.activity_view_note);
 		    	final TextView notedisplay = (TextView) findViewById(R.id.note_content);
 		    	
-		    	String noteText = localfiles[itemPosition];
+		    	String noteText = Externalfiles[itemPosition];
 		    	
 		    	notedisplay.setText(noteText);
 				
