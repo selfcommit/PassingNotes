@@ -17,5 +17,7 @@
     <string name="title_activity_simple_content">SimpleContentActivity</string>
     <string name="NoteText"></string>
     <string name="sendNotes">Send Notes</string>
+    <string name="sorry">Sorry Your device Does not support NFC</string>
+    <string name="over">Bring your devices together, then touch the screen to send.</string>
 
 </resources>

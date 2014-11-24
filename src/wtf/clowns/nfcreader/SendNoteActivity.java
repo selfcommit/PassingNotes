@@ -15,63 +15,53 @@ import android.os.Build;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.view.View.OnClickListener;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 import android.widget.AdapterView.OnItemClickListener;
 
-public class SendNoteActivity extends Activity{
-	ListView notesList;
-	
-	@Override
-	public void onCreate(Bundle savedInstanceState) {
-		super.onCreate(savedInstanceState);
-		setContentView(R.layout.activity_send_notes);
-		
-		//Grab object from layout XML
-		notesList = (ListView) findViewById(R.id.Noteslist);
-		final File ExternalStorage;
-		
-		ExternalStorage = getExternalFilesDir(null);
-	
-		//String[] testlist = new String[] {"First Note", "Second Note", "Third Note"};
-		final String[] Externalfiles = ExternalStorage.list(); 
-		
-		ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, android.R.id.text1,Externalfiles);
-		
-		notesList.setAdapter(adapter);
-		
-		//notesList Click Listener		
-		notesList.setOnItemClickListener(new OnItemClickListener() {
-			
-			@Override
-			public void onItemClick(AdapterView<?> parent, View view, int position, long id){
-				
-				int itemPosition = position;
-				
-				String itemValue = (String) notesList.getItemAtPosition(position);
-				
-				//setContentView(R.layout.activity_view_note);
-		    	final TextView notedisplay = (TextView) findViewById(R.id.note_content);
-		    	
-		    	String noteText = Externalfiles[itemPosition];
-		    	
-		    	File FiletoSend = getExternalFilesDir(noteText);
-		    	
-		    	//Toast.makeText(getApplicationContext(),
-				//"Position :" + itemPosition +" Listitem :" + itemValue, Toast.LENGTH_LONG)
-				//.show();
-				
-			}
-		});
-		
-		
-		
-	
-	}
-	
+public class SendNoteActivity extends Activity implements OnClickListener {
+		  private NfcAdapter adapter=null;
+
+		  @Override
+		  public void onCreate(Bundle savedInstanceState) {
+		    super.onCreate(savedInstanceState);
+		    adapter=NfcAdapter.getDefaultAdapter(this);
+
+		    if (!adapter.isNdefPushEnabled()) {
+		      Toast.makeText(this, R.string.sorry, Toast.LENGTH_LONG).show();
+		      finish();
+		    }
+		    else {
+		      Intent i=new Intent(Intent.ACTION_GET_CONTENT);
+		      
+		      i.setType("*/*");
+		      startActivityForResult(i, 0);
+		    }
+		  }
+
+		  @Override
+		  protected void onActivityResult(int requestCode, int resultCode,
+		                                  Intent data) {
+		    if (requestCode==0 && resultCode==RESULT_OK) {
+		      adapter.setBeamPushUris(new Uri[] {data.getData()}, this);
+		      
+		      Button btn=new Button(this);
+		      
+		      btn.setText(R.string.over);
+		      btn.setOnClickListener(this);
+		      setContentView(btn);
+		    }
+		  }
+
+		  @Override
+		  public void onClick(View v) {
+		    finish();
+		  }
 
     @Override
     public void onRestart() {
