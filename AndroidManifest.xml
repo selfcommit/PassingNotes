@@ -11,12 +11,18 @@
     <uses-permission android:name="android.permission.NFC" />
     <uses-permission android:name="android.permission.MANAGE_DOCUMENTS" />
     <uses-permission android:name="android.permission.BLUETOOTH" />
+	<uses-permission android:name="android.permission.BLUETOOTH_ADMIN"/>
+	
 
     <uses-feature
         android:name="android.hardware.nfc"
         android:required="true" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
-
+	<uses-feature android:name="android.hardware.bluetooth_le" android:required="true"/>
+	<uses-permission android:name="android.permission.BLUETOOTH_PRIVILEGED"/>
+	<uses-permission android:name="android.permission.MANAGE_DOCUMENTS"/>
+	
+	
     <application
         android:allowBackup="true"
         android:icon="@drawable/ic_launcher"
@@ -43,6 +49,7 @@
             android:name=".SimpleContentActivity"
             android:label="@string/title_activity_simple_content" >
         </activity>
+
     </application>
 
 </manifest>
