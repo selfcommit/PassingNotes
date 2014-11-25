@@ -4,35 +4,40 @@
     android:layout_height="match_parent"
     tools:context="${relativePackage}.${activityClass}" >
 
-    <EditText
-        android:id="@+id/writtenNote"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/store_note_button"
-        android:layout_alignParentTop="true"
-        android:layout_marginTop="170dp"
-        android:ems="10"
-        android:inputType="textMultiLine" >
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical" >
+            
+        <EditText
+            android:id="@+id/noteNameEditText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:text="Note Title"
+            android:textAlignment="center" />
 
-        <requestFocus />
-    </EditText>
+        <EditText
+            android:id="@+id/writtenNote"
+            android:layout_width="match_parent"
+            android:layout_height="283dp"
+            android:layout_marginTop="170dp"
+            android:layout_weight="0.11"
+            android:background="@android:color/black"
+            android:ems="10"
+            android:inputType="textMultiLine"
+            android:text="Enter Your Note Here and then Press &apos;Store Note&apos; "
+            android:textColor="@android:color/white" />
 
-    <Button
-        android:id="@+id/store_note_button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:layout_centerVertical="true"
-        android:onClick="storeNote"
-        android:text="@string/Store_note" />
+        <Button
+            android:id="@+id/store_note_button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="storeNote"
+            android:text="@string/Store_note" />
 
-    <TextView
-        android:id="@+id/NoteTextHelper"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignTop="@+id/writtenNote"
-        android:layout_toLeftOf="@+id/writtenNote"
-        android:labelFor="@+id/writtenNote"
-        android:textAppearance="?android:attr/textAppearanceSmall" />
-    
+    </LinearLayout>
+
+
+
 </RelativeLayout>

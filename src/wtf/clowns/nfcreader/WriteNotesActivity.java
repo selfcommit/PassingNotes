@@ -15,22 +15,23 @@ import android.widget.TextView;
 
 public class WriteNotesActivity extends Activity {
 
-	private EditText note_field;
+	private EditText note_field, name_field;
 	
 	@Override
 	public void onCreate(Bundle savedInstanceState){
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_write_notes);
 		note_field = (EditText) findViewById(R.id.writtenNote);
-
+		name_field = (EditText) findViewById(R.id.noteNameEditText);
 		
 	}
+
 
     public void storeNote(View v) {
     	//Call note storage
     	String noteText = note_field.getText().toString();
 
-    	String filename = noteText;
+    	String filename = name_field.getText().toString();
     	String content = noteText;
     	File ExternalStorage = new File(getExternalFilesDir(null), filename);
     	
