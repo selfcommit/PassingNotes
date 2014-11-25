@@ -7,6 +7,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.EditText;
 
 
 public class write_a_note extends Fragment implements View.OnClickListener {
@@ -33,6 +34,7 @@ public class write_a_note extends Fragment implements View.OnClickListener {
 
 		return (result);
 	}
+	
 	
 	@Override
 	public void onClick(View v) {
