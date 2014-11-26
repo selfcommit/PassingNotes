@@ -7,6 +7,7 @@ import java.io.FileOutputStream;
 import android.app.Activity;
 import android.content.Context;
 import android.os.Bundle;
+import android.os.Environment;
 import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
@@ -33,8 +34,8 @@ public class WriteNotesActivity extends Activity {
 
     	String filename = name_field.getText().toString();
     	String content = noteText;
-    	File ExternalStorage = new File(getExternalFilesDir(null), filename);
-    	
+    	File ExternalStorage = new File(Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS), filename);
+    	ExternalStorage.setReadable(true,false);
     	FileOutputStream outputStream = null;
 		try {
 			outputStream = new FileOutputStream(ExternalStorage);
@@ -48,13 +49,14 @@ public class WriteNotesActivity extends Activity {
     	//Store a Note
     	//http://developer.android.com/training/basics/data-storage/files.html#WriteInternalStorage
     	try{
-    		//outputStream = openFileOutput (filename, Context.MODE_PRIVATE);
+    		//outputStream = openFileOutput (filename, Context.MODE_WORLD_READABLE);
     		outputStream.write(content.getBytes());
     		outputStream.close();
     	} catch (Exception e) {
     		e.printStackTrace();
     	}
     	
+	
      	setContentView(R.layout.activity_view_note);
     	final TextView notedisplay = (TextView) findViewById(R.id.note_content);
     	notedisplay.setText(noteText);

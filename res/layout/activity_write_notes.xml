@@ -14,7 +14,6 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
-            android:text="Note Title"
             android:textAlignment="center" />
 
         <EditText
@@ -26,7 +25,6 @@
             android:background="@android:color/black"
             android:ems="10"
             android:inputType="textMultiLine"
-            android:text="Enter Your Note Here and then Press &apos;Store Note&apos; "
             android:textColor="@android:color/white" />
 
         <Button

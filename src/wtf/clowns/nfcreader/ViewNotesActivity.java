@@ -4,6 +4,7 @@ import java.io.File;
 
 import android.app.Activity;
 import android.os.Bundle;
+import android.os.Environment;
 import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
@@ -30,7 +31,7 @@ public class ViewNotesActivity extends Activity{
 		notesList = (ListView) findViewById(R.id.Noteslist);
 		File ExternalStorage;
 		
-		ExternalStorage = getExternalFilesDir(null);
+		ExternalStorage = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS);
 		
 		//String[] testlist = new String[] {"First Note", "Second Note", "Third Note"};
 		final String[] Externalfiles = ExternalStorage.list(); 
