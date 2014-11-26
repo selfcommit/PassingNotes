@@ -33,16 +33,13 @@ public class SendNoteActivity extends Activity implements OnClickListener {
 		    super.onCreate(savedInstanceState);
 		    adapter=NfcAdapter.getDefaultAdapter(this);
 		    
-		    File testfile = new File(Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS), "test");
-		    Uri testUri = Uri.fromFile(testfile);
-		    
 		    if (!adapter.isNdefPushEnabled()) {
 		      Toast.makeText(this, R.string.sorry, Toast.LENGTH_LONG).show();
 		      finish();
 		    }
 		    else {
-		      Intent i=new Intent(Intent.ACTION_PICK);
-		      i.setData(testUri);
+		      Intent i=new Intent(Intent.ACTION_GET_CONTENT);
+		      i.setType("*/*");
 		      startActivityForResult(i, 0);
 		    }
 		  }

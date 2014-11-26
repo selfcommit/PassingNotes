@@ -3,6 +3,7 @@ package wtf.clowns.nfcreader;
 import java.io.File;
 
 import android.app.Activity;
+import android.net.Uri;
 import android.os.Bundle;
 import android.os.Environment;
 import android.util.Log;
@@ -14,7 +15,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 import android.widget.AdapterView.OnItemClickListener;
 import android.content.Context;
-
+import android.content.Intent;
 
 public class ViewNotesActivity extends Activity{
 	
@@ -54,7 +55,10 @@ public class ViewNotesActivity extends Activity{
 		    	final TextView notedisplay = (TextView) findViewById(R.id.note_content);
 		    	
 		    	String noteText = Externalfiles[itemPosition];
-		    	
+		    	File datafile = new File(Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS), noteText);
+		    	Uri data = Uri.fromFile(datafile);
+		    	Intent intent = getIntent();
+		    	intent.setData(data);
 		    	notedisplay.setText(noteText);
 				
 		    	//Toast.makeText(getApplicationContext(),

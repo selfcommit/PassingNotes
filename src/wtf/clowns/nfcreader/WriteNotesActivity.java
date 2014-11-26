@@ -6,6 +6,8 @@ import java.io.FileOutputStream;
 
 import android.app.Activity;
 import android.content.Context;
+import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.os.Environment;
 import android.util.Log;
@@ -43,7 +45,6 @@ public class WriteNotesActivity extends Activity {
 			// TODO Auto-generated catch block
 			e1.printStackTrace();
 		}
-    	
 
     	
     	//Store a Note
@@ -56,6 +57,8 @@ public class WriteNotesActivity extends Activity {
     		e.printStackTrace();
     	}
     	
+    	sendBroadcast(new Intent(Intent.ACTION_MEDIA_SCANNER_SCAN_FILE, 
+    			Uri.parse("file://" + Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS))));
 	
      	setContentView(R.layout.activity_view_note);
     	final TextView notedisplay = (TextView) findViewById(R.id.note_content);
@@ -97,6 +100,7 @@ public class WriteNotesActivity extends Activity {
     public void onStop() {
     	
     	Log.d(getClass().getSimpleName(), "onStop()");
+    	
     	
     	super.onStop();
     }
